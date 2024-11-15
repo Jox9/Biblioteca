@@ -21,5 +21,5 @@ class Libro(models.Model):
     fk_autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.titulo}"
+        return f"{self.titulo} - {self.fk_autor.nombre}"
         
