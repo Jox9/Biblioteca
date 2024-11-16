@@ -4,17 +4,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <title>Inicio</title>
   </head>
   <body>
-    <h1>Inicio</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, magnam
-      distinctio sit laboriosam eveniet veritatis molestiae, commodi fugit
-      eligendi quam soluta itaque deserunt suscipit harum repudiandae illo
-      quibusdam odio iure!
-    </p>
+    <ul class="nav bg-primary justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active text-white" href="/" aria-current="page"
+          >Inicio</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/autores">Autor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/libros">Libros</a>
+      </li>
+    </ul>
+    <div style="background-color: rgb(252, 247, 234);">
+      <header class="p-4 ">
+        <h1 class="text-center">Biblioteca</h1>
+      </header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, magnam
+        distinctio sit laboriosam eveniet veritatis molestiae, commodi fugit
+        eligendi quam soluta itaque deserunt suscipit harum repudiandae illo
+        quibusdam odio iure!
+      </p>
+    </div>
   </body>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
