@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <header>
+        <h1>{{titulo}}</h1></header>
+        <p>{{msj}}</p>
+        <main>
+            <address>
+                <div>
+                    {% if disponibilidad == False %}
+                    <p style="color: darkgreen"><em>No está disponible</em></p>
+                    {% else %}
+                    <p style="color: darkgreen;"><em>Disponible</em></p>
+                    {% endif %}
+                </div>
+               <p><strong>Teléfono:</strong> {{telefono}} .</p>
+               <p><strong>Email:</strong> <a href="mailto:{{email}}">{{email}}</a> .</p> 
+            </address>
+        </main>
+</body>
+</html>
