@@ -7,7 +7,7 @@ Lleva registros sobre los activos de la biblioteca, almacena información, acerc
 - SQLite
 - Bootstrap
 
-# Funciones
+## Funciones
 - Página principal.
 - Listar, crear, actualizar y eliminar autores.
 - Listar, crear, actualizar y eliminar libros.
