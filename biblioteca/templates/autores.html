@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autores</title>
-  </head>
+{% extends "_base.html" %} {% block content %} {% load static %}
 
-  <body>
-    <h1>Autores</h1>
+<div>
+  <h1 class="text-center mt-5">Autores</h1>
 
-    <div>
+  <div class="d-flex flex-column align-items-center justify-content-center mb-4">
+    <a href="{% url 'crear_autor' %}" class="btn btn-primary">Crear autor</a>
+  </div>
+
+  <!-- Lista autores -->
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div style="width: 60%;" class="d-grid">
       {% for autor in autores %}
-      <h2>{{autor.nombre}}</h2>
-      <p>Nacionalidad: {{autor.nacionalidad}}</p>
-      <p>Edad: {{autor.edad}}</p>
+      <div class="row">
+        <div class="col-10">
+          <h2>{{autor.nombre}}</h2>
+          <p><strong>Nacionalidad:</strong> {{autor.nacionalidad}}</p>
+          <p><strong>edad:</strong> {{autor.edad}}</p>
+        </div>
+        <small class="col-2">
+          <a href="{% url 'editar_autor' autor.id %}" class="btn btn-link"> Editar </a>
+        </small>
+      </div>
+      <hr>
       {% endfor%}
     </div>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock content %}
