@@ -1,6 +1,3 @@
-# The `urlpatterns` list routes URLs to views. For more information please see:
-# https://docs.djangoproject.com/en/5.1/topics/http/urls/
-
 from django.contrib import admin
 from django.urls import path
 from . import views
@@ -9,8 +6,15 @@ from contactenos import views as contactenos
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.pagina_inicial),
-    path("autores", biblioteca.autores),
+    # Pagina de Inicio
+    path("", views.pagina_inicial, name="inicio"),
+    path("contactenos", contactenos.contactenos),
+
+    # Autores
+    path("autores", biblioteca.autores, name="autores"),
+    path("crear_autor", biblioteca.crear_autor, name="crear_autor"),
+    path("editar_autor/<int:id>", biblioteca.editar_autor, name="editar_autor"),
+
     path("libros", biblioteca.libros),
-    path("contactenos", contactenos.contactenos)
 ]
+
