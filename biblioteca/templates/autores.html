@@ -4,7 +4,7 @@
   <h1 class="text-center mt-5">Autores</h1>
 
   <div class="d-flex flex-column align-items-center justify-content-center mb-4">
-    <a href="{% url 'crear_autor' %}" class="btn btn-primary">Crear autor</a>
+    <a href="{% url 'crear_autor_page' %}" class="btn btn-primary">Crear autor</a>
   </div>
 
   <!-- Lista autores -->
@@ -18,7 +18,7 @@
           <p><strong>edad:</strong> {{autor.edad}}</p>
         </div>
         <small class="col-2">
-          <a href="{% url 'editar_autor' autor.id %}" class="btn btn-link"> Editar </a>
+          <a href="{% url 'editar_autor_page' autor.id %}" class="btn btn-link"> Editar </a>
         </small>
       </div>
       <hr>

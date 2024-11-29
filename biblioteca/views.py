@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Autor, Libro
 
 # Autores
-def autores(request): # Pagina que lista autores
+def autores_page(request): # Pagina que lista autores
 
     # Recibe solicitudes para crear autores
     if request.method == "POST":
@@ -21,10 +21,10 @@ def autores(request): # Pagina que lista autores
     return render(request, "autores.html", data)
 
 
-def crear_autor(request): # Pagina para crear autores
+def crear_autor_page(request): # Pagina para crear autores
     return render(request, "crear_autor.html")
 
-def editar_autor(request, id): # Pagina para editar autores 
+def editar_autor_page(request, id): # Pagina para editar autores 
    
    # Datos para autocompletar formularios con el autor
    # correspondiente. Ejm: editar autor Marcos  id = 1 
@@ -32,6 +32,24 @@ def editar_autor(request, id): # Pagina para editar autores
     data = {"autor" : autor_dt}
    
     return render(request, "editar_autor.html", data)
+
+def editar_autor(request):
+    
+    if request.method == "POST":
+        id = request.POST.get("id-autor")
+        nombre = request.POST.get("nombre-autor")
+        nacionalidad = request.POST.get("nacionalidad-autor")
+        edad = request.POST.get("edad-autor")
+
+        autor = Autor.objects.get(id = id)
+
+        autor.nombre = nombre
+        autor.nacionalidad = nacionalidad
+        autor.edad = edad
+
+        autor.save()
+
+    return redirect("autores_page")
 
 def eliminar_autor():
     pass
