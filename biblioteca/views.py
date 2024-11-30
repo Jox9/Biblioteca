@@ -59,6 +59,27 @@ def eliminar_autor(request, id):
     return redirect("autores_page")
 
 
+
 # Libros
-def libros(request):
-    return render(request, "libros.html")
+def libros_page(request):   # Lista
+
+    libros_dt = Libro.objects.all()
+    data = {"libros" : libros_dt}
+
+    return render(request, "libros.html", data)
+
+
+def añadir_libro_page(request): # Página para añadir
+    pass   
+
+def editar_libro_page(request, id): # Página para editar
+    pass
+
+def añadir_libro(request):  # Crear / Añadir
+    pass
+
+def editar_libro(request): # Editar
+    pass
+
+def eliminar_libro(request): # Eliminar
+    pass
