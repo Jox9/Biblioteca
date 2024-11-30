@@ -15,6 +15,7 @@ urlpatterns = [
     path("crear_autor", biblioteca.crear_autor_page, name="crear_autor_page"),
     path("editar_autor/<int:id>", biblioteca.editar_autor_page, name="editar_autor_page"),
     path("editar_autor", biblioteca.editar_autor, name="editar_autor"),
+    path("eliminar_autor/<int:id>", biblioteca.eliminar_autor, name="eliminar_autor"),
 
     path("libros", biblioteca.libros),
 ]

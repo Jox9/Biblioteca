@@ -51,8 +51,12 @@ def editar_autor(request):
 
     return redirect("autores_page")
 
-def eliminar_autor():
-    pass
+def eliminar_autor(request, id):
+    
+    autor = Autor.objects.get(id = id)
+    autor.delete()
+
+    return redirect("autores_page")
 
 
 # Libros
