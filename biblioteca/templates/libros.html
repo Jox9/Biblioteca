@@ -1,11 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Libro</h1>
-</body>
-</html>
+{% extends "_base.html" %} {% block content %} {% load static %}
+
+<div>
+  <h1 class="text-center mt-5">Libros</h1>
+
+  <div class="d-flex flex-column align-items-center justify-content-center mb-4">
+    <a href="{% url 'crear_autor_page' %}" class="btn btn-primary">Añadir Libro</a>
+  </div>
+
+  <!-- Lista Libros -->
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div style="width: 60%;" class="d-grid">
+      {% for libro in libros %} <!-- modificar.... abaja tambien -->
+      <div class="row">
+        <div class="col-8">
+          <h3>{{libro.titulo}}</h3>
+          <p><strong>Genero:</strong> {{libro.genero}}</p>
+          <p><strong>Autor:</strong> {{libro.fk_autor.nombre}}</p>
+          <p><strong>Idioma:</strong> {{libro.idioma}}</p>
+          <p><strong>Editorial:</strong> {{libro.editorial}}</p>
+        </div>
+        <div class="col-4 d-flex flex-row gap-2">
+          <small>
+            <a href="{% url 'editar_libro_page' libro.id %}" class="btn btn-outline-primary">Editar   ✎</a>
+          </small>
+          <small>
+            <a href="{% url 'eliminar_libro' libro.id %}" class="btn btn-outline-primary">Eliminar 🗑</a>
+          </small>
+        </div>
+      </div>
+      <hr>
+      {% endfor%}
+    </div>
+  </div>
+</div>
+{% endblock content %}
