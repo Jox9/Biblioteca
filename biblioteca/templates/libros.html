@@ -4,13 +4,13 @@
   <h1 class="text-center mt-5">Libros</h1>
 
   <div class="d-flex flex-column align-items-center justify-content-center mb-4">
-    <a href="{% url 'crear_autor_page' %}" class="btn btn-primary">Añadir Libro</a>
+    <a href="{% url 'añadir_libro_page' %}" class="btn btn-primary">Añadir Libro</a>
   </div>
 
   <!-- Lista Libros -->
   <div class="d-flex flex-column align-items-center justify-content-center">
     <div style="width: 60%;" class="d-grid">
-      {% for libro in libros %} <!-- modificar.... abaja tambien -->
+      {% for libro in libros %}
       <div class="row">
         <div class="col-8">
           <h3>{{libro.titulo}}</h3>
