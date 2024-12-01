@@ -64,6 +64,9 @@ def eliminar_autor(request, id):
     return redirect("autores_page")
 
 
+# --------------------------------------------
+
+
 # Libros
 def libros_page(request):  # Lista
 
@@ -83,7 +86,7 @@ def añadir_libro_page(request):  # Página para añadir
 
 def editar_libro_page(request, id):  # Página para editar
 
-    libro_dt = Libro.objects.get(id = id)
+    libro_dt = Libro.objects.get(id=id)
     autore_dt = Autor.objects.all()
 
     data = {"autores": autore_dt, "libro": libro_dt}
@@ -91,7 +94,7 @@ def editar_libro_page(request, id):  # Página para editar
     return render(request, "editar_libro.html", data)
 
 
-def añadir_libro(request: WSGIRequest):  # Crear / Añadir
+def añadir_libro(request):  # Crear / Añadir
 
     if request.method == "POST":
         codigo = request.POST.get("codigo-libro")
@@ -123,7 +126,36 @@ def añadir_libro(request: WSGIRequest):  # Crear / Añadir
 
 
 def editar_libro(request):  # Editar
-    pass
+
+    if request.method == "POST":
+        id = request.POST.get("id-libro")
+        codigo = request.POST.get("codigo-libro")
+        titulo = request.POST.get("titulo-libro")
+        autor_id = request.POST.get("autor-libro")  # id
+        descripcion = request.POST.get("descripcion-libro")
+        genero = request.POST.get("genero-libro")
+        idioma = request.POST.get("idioma-libro")
+        disponibilidad = request.POST.get("disponibilidad-libro")
+        editorial = request.POST.get("editorial-libro")
+
+        autor = Autor.objects.get(id = autor_id)
+        disponibilidad = True if disponibilidad == "on" else False
+
+        libro = Libro.objects.get(id = id)
+        
+        # Map
+        libro.codigo = codigo
+        libro.titulo = titulo
+        libro.fk_autor = autor
+        libro.descripcion = descripcion
+        libro.genero = genero
+        libro.idioma = idioma
+        libro.disponibilidad = disponibilidad
+        libro.editorial = editorial
+
+        libro.save()
+
+    return redirect("libros_page")
 
 
 def eliminar_libro(request):  # Eliminar
