@@ -18,9 +18,9 @@ urlpatterns = [
     path("eliminar_autor/<int:id>", biblioteca.eliminar_autor, name="eliminar_autor"),
 
     # Libros
-    path("libros=", biblioteca.libros_page, name="libros_page"),
-    path("añadir_libro=", biblioteca.añadir_libro_page, name="añadir_libro_page"),
-    path("editar_libro=<int:id>", biblioteca.editar_libro_page, name="editar_libro_page"),
+    path("libros_page", biblioteca.libros_page, name="libros_page"),
+    path("añadir_libro_page", biblioteca.añadir_libro_page, name="añadir_libro_page"),
+    path("editar_libro_page=<int:id>", biblioteca.editar_libro_page, name="editar_libro_page"),
     path("añadir_libro", biblioteca.añadir_libro, name="añadir_libro"),
     path("editar_libro", biblioteca.editar_libro, name="editar_libro"),
     path("eliminar_libro/<int:id>", biblioteca.eliminar_libro, name="eliminar_libro"),

@@ -26,6 +26,7 @@
                 <div class="col-6"> <!-- Autor -->
                     <label class="form-label" for="autor-libro">Autor</label>
                     <select class="form-select" name="autor-libro" id="autor-libro">
+                        <option class="form-control" selected value="{{libro.fk_autor.id}}" >{{libro.fk_autor.nombre}}</option>
                         {% for autor in autores %}
                         <option class="form-control" value="{{autor.id}}">{{autor.nombre}}</option>
                         {% endfor %}

@@ -93,7 +93,7 @@ def editar_libro_page(request, id):  # Página para editar
 
     return render(request, "editar_libro.html", data)
 
-
+#-----
 def añadir_libro(request):  # Crear / Añadir
 
     if request.method == "POST":
@@ -158,5 +158,9 @@ def editar_libro(request):  # Editar
     return redirect("libros_page")
 
 
-def eliminar_libro(request):  # Eliminar
-    pass
+def eliminar_libro(request, id):  # Eliminar
+    
+    libro = Libro.objects.get(id = id)
+    libro.delete()
+
+    return redirect("libros_page")
