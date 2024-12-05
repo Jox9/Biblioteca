@@ -1,16 +1,37 @@
 {% extends "_base.html" %} {% block content %} {% load static %}
 
 
-<div style="height: 100vh;">
+<div style="height: 100vh; display: flex; flex-direction: column; align-items: center;">
   <header class="p-4 ">
     <h1 class="text-center">Biblioteca</h1>
   </header>
-  <p class="px-5">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, magnam
-    distinctio sit laboriosam eveniet veritatis molestiae, commodi fugit
-    eligendi quam soluta itaque deserunt suscipit harum repudiandae illo
-    quibusdam odio iure!
-  </p >
+  <div class="d-grid w-75 mt-5">
+    <div class="row">
+      <div class="col-6">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <a hidden href="http://www.freepik.com">Designed by vectorpouch / Freepik</a>
+          <img class="w-75 h-75" src="{% static 'images/biblioteca.jpg' %}" alt="biblioteca" srcset="">
+        </div>
+      </div>
+      <div class="col-6">
+        <h2>
+          Funcionalidades
+        </h2>
+        <dl>
+          <dt>Explora el Catalogo</dt>
+          <dd>Navega a travez de títulos organizados por Autor.</dd>
+          <dt>Administrar los libros</dt>
+          <dd>Añade, actualiza y elimina libros y su información.</dd>
+          <dt>Accede a información</dt>
+          <dd>Información detallada de cada libro, así como su disponibilidad.</dd>
+        </dl>
+        <p>
+
+
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}
