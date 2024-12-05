@@ -1,10 +1,9 @@
 # Biblioteca
-Lleva registros sobre los activos de la biblioteca, almacena información, acerca de los libros y su autores.
+Aplicación de gestión de una biblioteca ficticia, mientras aprendo Django. Permite hacer CRUD a información acerca de los libros y su autores.
 
 ## Tecnologías
 - Python
 - Django 
-- SQLite
 - Bootstrap
 
 ## Funciones
