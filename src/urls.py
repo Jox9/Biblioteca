@@ -8,7 +8,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Pagina de Inicio
     path("", views.pagina_inicial, name="inicio"),
-    path("contactenos", contactenos.contactenos),
+    path("contactenos", contactenos.contactenos, name="contactenos"),
 
     # Autores
     path("autores", biblioteca.autores_page, name="autores_page"),

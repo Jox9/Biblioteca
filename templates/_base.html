@@ -15,13 +15,13 @@
             <a class="nav-link active text-white" href="{% url 'inicio' %}" aria-current="page">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="/autores">Autor</a>
+            <a class="nav-link text-white" href="{% url 'autores_page' %}">Autor</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="{% url 'libros_page' %}">Libros</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="/contactenos">Contactenos</a>
+            <a class="nav-link text-white" href="{% url 'contactenos' %}">Contactenos</a>
         </li>
     </ul>
 
